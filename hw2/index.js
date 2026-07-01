@@ -55,7 +55,6 @@ const zadaca4 = studenti.reduce((gradovi, student) => {
         });
     }
     return gradovi;
-
 }, []);
 
 zadaca4.forEach(grad => {
