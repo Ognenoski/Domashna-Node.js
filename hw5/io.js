@@ -1,5 +1,6 @@
 const fs = require("fs");
 
+
 const write = (filename, data) => {
     return new Promise((resolve, reject) => {
         data = JSON.stringify(data);
