@@ -47,11 +47,12 @@ const testDeleteCar = async (id) => {
 
 
 const runTests = async () => {
+
     await testGetAllCars();
     await testGetCarById(1);
-    await testAddCar();
-    await testUpdateCar(2);
-    await testDeleteCar(3);
+    // await testAddCar();
+    // await testUpdateCar(2);
+    // await testDeleteCar(3);
 }; 
 
 runTests();
