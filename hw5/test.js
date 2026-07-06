@@ -2,20 +2,17 @@ const cars = require("./cars");
 
 //3. Get all entities
 
-const test = async () => {
-    const allCars = await cars.getAllCars();
+const testGetAllCars = async () => {
+    const allCars = await cars.getAllCars("data.json");
     console.log("All cars:", allCars);
 };
 
-test();
 //3.Get one entity by id
 
 const testGetCarById = async (id) => {
-    const car = await cars.getCarById(id);
+    const car = await cars.getCarById("data.json", id);
     console.log(`Car with ID ${id}`, car);
 }
-
-testGetCarById(1);
 
 //2. Add new entity
 
@@ -25,11 +22,9 @@ const testAddCar = async () => {
         model: "Maranello",
         year: 2021
     };
-    const addedCar = await cars.addCar(newCar);
+    const addedCar = await cars.addCar("data.json", newCar);
     console.log("Added car:", addedCar);
 };
-
-testAddCar();
 
 //5. Edit entity
 
@@ -39,15 +34,23 @@ const testUpdateCar = async (id) => {
         model: "Aventador",
         year: 2022
     };
-    const editedCar = await cars.updateCar(id, updatedCar);
+    const editedCar = await cars.updateCar("data.json", id, updatedCar);
     console.log("Edited car:", editedCar);
 };
-testUpdateCar(2);
 
 //4. Remove entity
 
 const testDeleteCar = async (id) => {
-    const deleted = await cars.deleteCar(id);
+    const deleted = await cars.deleteCar("data.json", id);
     console.log("Deleted car:", deleted);
 };
-testDeleteCar(3);
+
+const runTests = async () => {
+    await testGetAllCars();
+    await testGetCarById(1);
+    await testAddCar();
+    await testUpdateCar(2);
+    await testDeleteCar(3);
+};
+
+runTests();
