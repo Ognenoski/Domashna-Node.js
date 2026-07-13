@@ -3,6 +3,7 @@ const http = require('http');
 
 const server = http.createServer((req, res) => {    // 1. Kreirame server
     const url = req.url;
+    
     res.setHeader('Content-Type', 'text/html');
 
     if (url === '/home') {
