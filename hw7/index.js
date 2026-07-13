@@ -27,7 +27,7 @@ app.get('/home/cars', (req, res) => {
     // 3. Fetch data from https://jsonplaceholder.typicode.com/users
     // 4. Display users from this API (just the names)
 app.get('/users', async (req, res) => {
-
+try {
     const response = await fetch("https://jsonplaceholder.typicode.com/users");
 
     const users = await response.json();
@@ -39,6 +39,11 @@ app.get('/users', async (req, res) => {
         names.join(" | ") +
         '</p>'
     );
+    
+} catch (error) {
+    console.error("Error fetching users:", error);
+    res.status(500).send("Error fetching users");
+}
 });
 
 app.listen(8000);
