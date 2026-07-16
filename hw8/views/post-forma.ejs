@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rezultat</title>
+</head>
+<body>
+
+    <h1>Rezultat od analizata</h1>
+
+    <h3>Vnesen tekst:</h3>
+
+    <p><%= text %></p>
+
+    <hr>
+
+    <p>Vkupen broj na karakteri: <%= totalCharacters %></p> 
+
+    <p>Vkupen broj na zborovi: <%= totalWords %></p>
+
+    <p>Zborovi pomali od 5 karakteri: <%= wordsLessThanFive %></p>
+
+    <p>Zborovi pogolemi od 5 karakteri: <%= wordsMoreThanFive %></p>
+
+    <p>Zborovi ednakvi na 5 karakteri: <%= wordsEqualToFive %></p>
+
+    <p>Vkupen broj na paragrafi: <%= totalParagraphs %></p>
+
+    <br>
+
+    <a href="/analiza">Nazad</a>
+
+</body>
+</html>
