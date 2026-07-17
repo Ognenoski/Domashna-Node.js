@@ -3,7 +3,7 @@ const getAnalysis = (req, res) => {
 };
 
 const postAnalysis = (req, res) => {
-    res.render("post-forma");
+    
 
     const text = req.body.text;
 
