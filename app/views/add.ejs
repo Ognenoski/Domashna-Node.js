@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Grocery</title>
+</head>
+<body>
+
+    <%- include("header") %>
+
+    <h2>Dodadi nov artikl</h2>
+
+    <form action="/groceries" method="POST">
+
+        <input type="text" name="ime" placeholder="Ime" required/>
+        <input type="text" name="proizveduvac" placeholder="Proizveduvac" required/>
+        <input type="number" name="kolicina" placeholder="Kolicina" required/>
+        <input type="number" name="rokNaTraenje" placeholder="Rok na traenje (denovi)" required/>
+        <input type="text" name="prodaznoMesto" placeholder="Prodazno mesto" required/>
+
+        <button type="submit">Dodadi</button>
+
+    </form>
+
+</body>
+</html>

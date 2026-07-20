@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groceries List</title>
+</head>
+<body>
+
+    <%- include("header") %>
+
+    <h2>Groceries List</h2>
+
+    <table border="1" width="100%">
+        <tr>
+            <th>Ime</th>
+            <th>Proizveduvac</th>
+            <th>Kolicina</th>
+            <th>Rok na traenje (vo denovi)</th>
+            <th>Prodazno mesto</th>
+            <th>Brisenje</th>
+            <th>Edit</th>
+        </tr>
+
+        <% data.forEach((item, i) => { %>
+            <tr>
+                <td><%= item.ime %></td>
+                <td><%= item.proizveduvac %></td>
+                <td><%= item.kolicina %></td>
+                <td><%= item.rokNaTraenje %></td>
+                <td><%= item.prodaznoMesto %></td>
+
+                <td>
+                    <a href="/delete?index=<%= i %>">Delete</a>
+                </td>
+
+                <td>
+                    <a href="/edit?index=<%= i %>">Edit</a>
+                </td>
+            </tr>
+        <% }) %>
+
+    </table>
+
+    <br>
+
+    <a href="/groceries">Dodadi nov artikl</a>
+
+</body>
+</html>

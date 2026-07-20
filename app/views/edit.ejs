@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Grocery</title>
+</head>
+<body>
+
+    <%- include("header") %>
+
+    <h2>Edit Grocery</h2>
+
+    <form action="/edit?index=<%= index %>" method="POST">
+
+        <input type="text" value="<%= item.ime %>" required/>
+        <input type="text" name="proizveduvac" value="<%= item.proizveduvac %>" required/>
+        <input type="number" name="kolicina" value="<%= item.kolicina %>" required/>
+        <input type="number" name="rokNaTraenje" value="<%= item.rokNaTraenje %>" required/>
+        <input type="text" name="prodaznoMesto" value="<%= item.prodaznoMesto %>" required/>
+
+        <button type="submit">Save</button>
+
+    </form>
+
+</body>
+</html>
